@@ -1,9 +1,8 @@
 // INITIAL CANVAS STRUCTURE
 const canvas = document.querySelector("#my-canvas");
-canvas.style.backgroundColor = "lightGray"
+canvas.style.backgroundColor = "lightGray";
 
-// stablish context. Enables paintbrush.
-const ctx = canvas.getContext("2d");
+const ctx = canvas.getContext("2d"); // Enables paintbrush.
 
 // GLOBAL VARIABLES
 
