@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    background-color: pink;
+    background-size: cover;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  #splash-screen {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  #logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  #my-canvas {
+    display: none;
+  }
+  
+  #gameover-screen {
+    display: none;
+  }
+  
+  #start-btn {
+    background-color: #f3be2c;
+    border-radius: 8px;
+    color: rgb(248, 94, 4);
+    padding: 20px;
+    font-size: 20px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+
+  #restart-btn {
+    background-color: #079f14;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+
+  #score {
+    background-color: rgba(210, 235, 142, 0.8);
+    border-radius: 8px;
+    font-size: 20px;
+    font-family: Arial;
+    width: 200px;
+    padding: 0px;
+    margin-top: 0;
+    margin-left: 20px;
+    height: 170px;
+    box-shadow: inset 0px 0px 20px -6px #6ada0e;
+  }
+  
+  h1 {
+    color: rgba(238, 98, 98, 0.9);
+    font-weight: bolder;
+    font-size: 67px;
+    text-align: center;
+    text-shadow: 0px 0px 20px #969696;
+  }
+  
+  h6 {
+    margin-top: 40px;
+    color: #ee9246;
+    font-weight: bolder;
+    font-size: 28px;
+    display: flex;
+    text-align: center;
+    text-shadow: 1px rgb(255, 230, 0);
+  }
+  
+  p {
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+  }
+  
