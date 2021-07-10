@@ -39,7 +39,11 @@ startButton.addEventListener("click", () => {
     // 13(b) step and then 14 > new file pipe.js
     window.addEventListener("keydown", (event) => {
         if (event.code === "ArrowUp") {
-
+            gameObject.player.playerJump();
+        } else if (event.code === "ArrowLeft") {
+            gameObject.player.playerLeft();
+        } else if (event.code === "ArrowRight") {
+            gameObject.player.playerRight();
         }
     })
 }) 
