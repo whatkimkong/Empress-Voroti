@@ -16,7 +16,7 @@ body {
   #splash-screen {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
   }
 
   #logo {
@@ -24,15 +24,22 @@ body {
     justify-content: center;
   }
 
-  #my-canvas {
-    display: none;
-    width: 800px;
+  #intro {
+    color:rgb(76, 156, 161);
+    text-shadow: 2px 2px 5px violet;
+    width: 600px;
   }
-  
-  #gameover-screen {
-    display: none;
+
+  #highlighted {
+    color: salmon;
+    font-weight: bolder;
   }
-  
+
+  #highlighted-bad {
+    color: rgb(82, 114, 96);
+    font-weight: bolder;
+  }
+
   #start-btn {
     background-color: #f3be2c;
     border-radius: 8px;
@@ -45,6 +52,30 @@ body {
     align-items: flex-start;
   }
 
+  #my-game-screen {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color:rgb(240, 94, 50);
+  }
+
+  #c-container {
+    padding-left: 50px;
+  }
+
+  #my-canvas {
+    display: none;
+    width: 800px;
+  }
+  
+  #gameover-screen {
+    display: none;
+  }
+
+  #won-screen {
+    display: none;
+  }
 
   #restart-btn {
     background-color: #079f14;

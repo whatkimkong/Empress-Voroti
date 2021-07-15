@@ -13,14 +13,6 @@ class Player {
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height)
     }
 
-// wall collisions are within each movement of the player
-
-    playerGravity = () => {
-        if (this.y + this.height < canvas.height) {
-            this.y++;
-        }
-    }
-
     playerJump = () => {
         if (this.y > 0) {
         this.y -= 40;
@@ -45,5 +37,19 @@ class Player {
             this.y < platform.y + platform.height - 90 &&
             this.y + this.height > platform.y + 25 );
     }
+    
 
+    heartCollision = (heart) => {
+        return (this.x < heart.x + heart.width - 10  &&
+            this.x + this.width > heart.x + 10 &&
+            this.y < heart.y + heart.height - 10 &&
+            this.y + this.height > heart.y + 10 );
+    }
+
+    crownCollision = (crown) => {
+        return (this.x < crown.x + crown.width - 10  &&
+            this.x + this.width > crown.x + 10 &&
+            this.y < crown.y + crown.height - 10 &&
+            this.y + this.height > crown.y + 10 );
+    }
 }

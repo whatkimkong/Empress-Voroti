@@ -100,3 +100,9 @@ Bad Bisch Score // Sad Bisch Score Methods
 Bad Bisch Score // Sad Bisch Score within GameScreen HTML
 
 For hundreds of years the view of beauty was of the curves, the more volumptious and more canvas needed the better, jealous of their limelight a group of "Shamers" formed to spread an evil philosophy of skinny beauty, things got out of hand and the "Shamers" moved on to attack about anything that could describe a physique. Queens of all shapes and sizes are now crippled by this deadly nonsense and cannot see their immense beauty and power in being exactly who they are, in the beautiful form the universe brought them here to be.
+
+
+
+https://thebrag.com/body-neutrality/ - read more about 
+
+        <p id="intro">In honour of body neutrality, to constructively consider that our physicality has nothing to do with how we feel about ourselves and define ourselves.</p>
