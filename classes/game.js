@@ -12,10 +12,13 @@ class Game {
         this.baddieArray = [];
         this.isGameRunning = true;
         this.gameAudio = new Audio("./music/island-beat.mp3");
-        this.tlcAudio = new Audio("./music");
-        this.crownAudio = new Audio("./music");
+        this.gameAudio.volume = 0.1;
+        // this.tlcAudio = new Audio("./music");
+        // this.crownAudio = new Audio("./music");
         this.wonAudio = new Audio("./music/short1.mp3");
-        this.lostAudio = new Audio("./music/aaliyah-short.mp3")
+        this.wonAudio.volume = 0.1;
+        this.lostAudio = new Audio("./music/aaliyah-short.mp3");
+        this.lostAudio.volume = 0.1;
     }
 
     spawnPlatforms = () => {
