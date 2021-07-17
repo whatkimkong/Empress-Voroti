@@ -3,7 +3,7 @@
 class Game {
     constructor () { 
         this.bg = new Image(); // how we implement images
-        this.bg.src = "./images/bg.png";
+        this.bg.src = "./Images/bg.png";
         this.player = new Player();
         this.platformArray = [];
         this.confidenceArray = [];
@@ -22,19 +22,19 @@ class Game {
     }
 
     spawnPlatforms = () => {
-        let platform1 = new Platforms(50, canvas.height - canvas.height / 3, "./images/platform1.png");
+        let platform1 = new Platforms(50, canvas.height - canvas.height / 3, "./Images/platform1.png");
         this.platformArray.push(platform1); // bottom left
 
-        let platform2 = new Platforms(500, 350,"./images/platform1.png");
+        let platform2 = new Platforms(500, 350,"./Images/platform1.png");
         this.platformArray.push(platform2); // bottom right
 
-        let platform3 = new Platforms(300, 230, "./images/platform2.png");
+        let platform3 = new Platforms(300, 230, "./Images/platform2.png");
         this.platformArray.push(platform3); // middle
 
-        let platform4 = new Platforms(550, 120, "./images/platform2.png");
+        let platform4 = new Platforms(550, 120, "./Images/platform2.png");
         this.platformArray.push(platform4); // top right
 
-        let platform5 = new Platforms(10, 60, "./images/platform1.png");
+        let platform5 = new Platforms(10, 60, "./Images/platform1.png");
         this.platformArray.push(platform5); // for crown
     }
 

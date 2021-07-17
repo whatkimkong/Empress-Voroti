@@ -5,7 +5,7 @@ class Crown {
         this.width = 50;
         this.height = 50;
         this.image = new Image();
-        this.image.src = "./images/crown.png";
+        this.image.src = "./Images/crown.png";
     }
 
     drawCrown = () => {

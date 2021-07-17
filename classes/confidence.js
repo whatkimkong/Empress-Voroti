@@ -5,7 +5,7 @@ class Confidence {
         this.width = 20;
         this.height = 20;
         this.image = new Image();
-        this.image.src = "./images/heart.png";
+        this.image.src = "./Images/heart.png";
     }
 
     drawConfidence = () => {
