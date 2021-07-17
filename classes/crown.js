@@ -1,7 +1,7 @@
 class Crown {
     constructor() {
-        this.x = 15;
-        this.y = 15;
+        this.x = 350;
+        this.y = 190;
         this.width = 50;
         this.height = 50;
         this.image = new Image();

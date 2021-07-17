@@ -5,13 +5,17 @@ class Game {
         this.bg = new Image(); // how we implement images
         this.bg.src = "../images/bg.png";
         this.player = new Player();
-        this.crown = new Crown();
-        this.confidence = new Confidence();
-        this.platform = new Platforms();
         this.platformArray = [];
         this.confidenceArray = [];
+        this.confidenceScore = 0;
         this.crownArray = [];
+        this.baddieArray = [];
         this.isGameRunning = true;
+        this.gameAudio = new Audio("../music/island-beat.mp3");
+        this.tlcAudio = new Audio("../music");
+        this.crownAudio = new Audio("../music");
+        this.wonAudio = new Audio("../music/short1.mp3");
+        this.lostAudio = new Audio("../music/aaliyah-short.mp3")
     }
 
     spawnPlatforms = () => {
@@ -97,15 +101,19 @@ class Game {
             }
         })
         if (isGrounded === false) {
-            this.player.y++;
+            this.player.y+=2;
         }
     } // the problem was with the second part of the or conditional - axis were off... and had to be in line with the player starting point.
 
-
     confidenceCollisionCheck = () => {
-        this.confidenceArray.forEach((heart, index) => {
-            if (this.player.heartCollision(heart) === true) {
+        this.confidenceArray.forEach((eachHeart, index) => {
+            if (this.player.heartCollision(eachHeart) === true) {
                 this.confidenceArray.splice(index, 1);
+                this.confidenceScore += 1;
+                confidenceScreen.innerText = this.confidenceScore;
+                if (this.confidenceScore === 25) {
+                    this.spawnCrown();
+                }
             }
         })
     }
@@ -115,21 +123,41 @@ class Game {
         this.crownArray.push(crownAppear);
     }
 
-    crownCollisionCheck = () => {
-        this.crownArray.forEach((crown, index)  => {
+    wonOrLostCollisionCheck = () => {
+        this.crownArray.forEach(crown => {
             if (this.player.crownCollision(crown) === true) {
-                this.crownArray.splice(index, 1);
+                this.isGameRunning = false; // thats when the crown is collided with !! GAME WON!!! 
+                canvas.style.display = "none";
+                gameScreen.style.display = "none";
+                wonScreen.style.display = "flex";
+                this.gameAudio.pause();
+                this.wonAudio.play();
+            }
+        })
+        this.baddieArray.forEach(baddie => {
+            if (this.player.baddieCollision(baddie) === true) {
+                this.isGameRunning = false;
+                canvas.style.display = "none";
+                gameScreen.style.display = "none";
+                gameoverScreen.style.display = "flex";
+                this.gameAudio.pause();
+                this.lostAudio.play();
             }
         })
     }
 
-    wonOrLost = () => {
-        if (this.confidenceArray.length === 0 && this.crownArray.length === 0) {
-            this.isGameRunning === false;
-            // put here the dom won screen? 
-            wonScreen.style.display = "flex";
-        }
+    spawnBaddie = () => {
+        let baddie1 = new Baddie(20, 20);
+        this.baddieArray.push(baddie1);
+
+        let baddie2 = new Baddie(300, 190);
+        this.baddieArray.push(baddie2);
+
+        let baddie3 = new Baddie(550, canvas.height - 55);
+        this.baddieArray.push(baddie3);
     }
+
+    // only draw the crown when all are caught OR dont create the crown only invoke spawn when the array is empty.
 
     gameLoop = () => {
         // i) clearing canvas
@@ -141,18 +169,19 @@ class Game {
             this.spawnPlatforms();
         }
 
-        if (this.confidenceArray.length === 0) {
+        if (this.confidenceArray.length === 0 && this.confidenceScore === 0) {
             this.spawnConfidence();
         }
 
-        if (this.crownArray.length === 0) {
-            this.spawnCrown();
-        }
+        this.spawnBaddie();
+        this.baddieArray.forEach(eachBaddie => {
+            eachBaddie.baddieMove();
+        }) 
 
         this.confidenceCollisionCheck();
         this.platformCollisionCheck();
-        this.crownCollisionCheck()
-        // thisgameover
+
+
 
         // iii) drawing the elements
         ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height) // draw canvas
@@ -162,17 +191,28 @@ class Game {
 
         this.platformArray.forEach(eachPlatform => {
             eachPlatform.drawPlatform();
-          }) //draw Array
+          })
 
         this.confidenceArray.forEach(eachHeart => {
             eachHeart.drawConfidence()
         })  // draw those that are STILL in the Array (after splicing)
 
-        this.wonOrLost()
+        this.baddieArray.forEach(eachBaddie => {
+            eachBaddie.drawBaddie();
+        }) 
+        
+
+        this.crownArray.forEach(eachCrown => {
+                eachCrown.drawCrown();
+        }) // draw the crown!
+
+        this.wonOrLostCollisionCheck();
 
         // iv) request animation
         if (this.isGameRunning) {
            requestAnimationFrame(this.gameLoop)
+
+           this.gameAudio.play();
         }
     }
 }

@@ -10,12 +10,12 @@ class Player {
     }
 
     drawPlayer = () => {
-        ctx.drawImage(this.image, this.x, this.y, this.width, this.height)
+        ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
 
     playerJump = () => {
         if (this.y > 0) {
-        this.y -= 40;
+        this.y -= 70;
         }
     }
 
@@ -52,4 +52,13 @@ class Player {
             this.y < crown.y + crown.height - 10 &&
             this.y + this.height > crown.y + 10 );
     }
+
+    baddieCollision = (baddie) => {
+        return (this.x < baddie.x + baddie.width - 10  &&
+            this.x + this.width > baddie.x + 10 &&
+            this.y < baddie.y + baddie.height - 10 &&
+            this.y + this.height > baddie.y + 10 );
+    }
+
+
 }

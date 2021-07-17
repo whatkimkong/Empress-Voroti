@@ -1,11 +1,11 @@
 class Platforms {
-    constructor(xPos, yPos, URL) {
+    constructor(xPos, yPos, srcURL) {
         this.x = xPos;
         this.y = yPos;
         this.width = 250;
         this.height = 50;
         this.image = new Image();
-        this.image.src = URL;
+        this.image.src = srcURL;
     } 
     
     drawPlatform = () => {
