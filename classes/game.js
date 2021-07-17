@@ -3,7 +3,7 @@
 class Game {
     constructor () { 
         this.bg = new Image(); // how we implement images
-        this.bg.src = "../images/bg.png";
+        this.bg.src = "./images/bg.png";
         this.player = new Player();
         this.platformArray = [];
         this.confidenceArray = [];
@@ -11,27 +11,27 @@ class Game {
         this.crownArray = [];
         this.baddieArray = [];
         this.isGameRunning = true;
-        this.gameAudio = new Audio("../music/island-beat.mp3");
-        this.tlcAudio = new Audio("../music");
-        this.crownAudio = new Audio("../music");
-        this.wonAudio = new Audio("../music/short1.mp3");
-        this.lostAudio = new Audio("../music/aaliyah-short.mp3")
+        this.gameAudio = new Audio("./music/island-beat.mp3");
+        this.tlcAudio = new Audio("./music");
+        this.crownAudio = new Audio("./music");
+        this.wonAudio = new Audio("./music/short1.mp3");
+        this.lostAudio = new Audio("./music/aaliyah-short.mp3")
     }
 
     spawnPlatforms = () => {
-        let platform1 = new Platforms(50, canvas.height - canvas.height / 3, "../images/platform1.png");
+        let platform1 = new Platforms(50, canvas.height - canvas.height / 3, "./images/platform1.png");
         this.platformArray.push(platform1); // bottom left
 
-        let platform2 = new Platforms(500, 350,"../images/platform1.png");
+        let platform2 = new Platforms(500, 350,"./images/platform1.png");
         this.platformArray.push(platform2); // bottom right
 
-        let platform3 = new Platforms(300, 230, "../images/platform2.png");
+        let platform3 = new Platforms(300, 230, "./images/platform2.png");
         this.platformArray.push(platform3); // middle
 
-        let platform4 = new Platforms(550, 120, "../images/platform2.png");
+        let platform4 = new Platforms(550, 120, "./images/platform2.png");
         this.platformArray.push(platform4); // top right
 
-        let platform5 = new Platforms(10, 60, "../images/platform1.png");
+        let platform5 = new Platforms(10, 60, "./images/platform1.png");
         this.platformArray.push(platform5); // for crown
     }
 

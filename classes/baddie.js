@@ -6,7 +6,7 @@ class Baddie {
         this.height = 40;
         this.speed = 1;
         this.image = new Image()
-        this.image.src = "../images/baddie.png";
+        this.image.src = "./images/baddie.png";
     }
 
     // a) create a method to draw the pipe

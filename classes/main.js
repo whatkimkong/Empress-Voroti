@@ -57,10 +57,9 @@ startButton.addEventListener("click", () => {
         gameoverScreen.style.display = "none";
         // hide the splash screen DOM element
         splashScreen.style.display = "flex";
-        gameObject = new Game();
-        this.lostAudio.pause();
+        gameObject.lostAudio.muted = true;
+        gameObject.wonAudio.muted = true;
     })
-
 }) 
 
 

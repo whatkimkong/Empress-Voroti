@@ -5,7 +5,7 @@ class Player {
         this.width = 80;
         this.height = 80;
         this.image = new Image();
-        this.image.src = "../images/player-curvy.png";
+        this.image.src = "./images/player-curvy.png";
         this.speed = 1;
     }
 
